@@ -1,8 +1,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php the_post_thumbnail("Large", ['class' => 'card-img-top img-fluid']); ?>
-
+    <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('Large', ['class' => 'card-img-top img-fluid']); ?></a>
     <div class="card-body">
-        <h5 class="card-title"><?php the_title(); ?></h5>
+        <a href="<?php the_permalink(); ?>">
+            <h4 class="card-title"><?php the_title(); ?></h4>
+        </a>
         <p class="card-text"><?php the_excerpt(); ?></p>
     </div>
-</article>
+
+</article><!-- article -->

@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php
+get_header();
+get_template_part('template-parts/acf', 'pageBanner');
+?>
 
 <section id="blogpage">
     <div class="section-content">
@@ -8,7 +11,7 @@
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
                             <div class="card">
 
-                                <?php get_template_part('template-parts/content'); ?>
+                                <?php get_template_part('template-parts/content', get_post_format()); ?>
                             </div>
 
                     <?php endwhile;
@@ -22,4 +25,7 @@
     </div>
 </section>
 
-<?php get_footer(); ?>
+<?php
+get_template_part('template-parts/acf', 'map');
+get_footer();
+?>

@@ -4,4 +4,4 @@
             <p><?php the_title(); ?></p>
         </a>
     </div>
-</article>
+</article><!-- article -->
