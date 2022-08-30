@@ -7,7 +7,7 @@
         <ul aria-label="breadcrumb" role="navigation" class="p-0">
             <ol class="breadcrumb bg-transparent">
                 <li class="breadcrumb-item"><a href="<?php echo site_url('/'); ?>"><?php echo get_the_title(56); ?></a></li>
-                <li class="breadcrumb-item"><a href="<?php echo site_url('/blog'); ?>"><?php echo get_the_title(35); ?></a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('/blog'); ?>"><?php echo get_the_title(28); ?></a></li>
                 <li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
             </ol>
         </ul>

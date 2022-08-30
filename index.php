@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<!-- INDEX TEMPLATE 
+	============================================================= -->
 <section>
     <div class="section-content">
         <div class="container">

@@ -1,26 +1,24 @@
 <?php get_header();
-get_template_part('template-parts/acf', 'pageBanner');
-?>
-<section id="post"></section>
-<div class="section-content">
-    <div class="container">
+get_template_part('template-parts/acf', 'pageBanner'); ?>
 
-        <!-- page-hader -->
-        <?php get_template_part('template-parts/content', 'pageHeader'); ?>
+<!-- POST
+====================================================== -->
+<section id="post">
+    <div class="section-content">
+        <div class="container">
+            <?php get_template_part('template-parts/content', 'pageHeader'); ?>
+            <div class="row">
 
-        <div class="row">
-            <?php get_template_part('template-parts/content', 'single'); ?>
-            <!-- MAin -->
-            <?php get_template_part('template-parts/content', 'sidebar'); ?>
+                <?php
+                get_template_part('template-parts/content', 'single');
+                get_template_part('template-parts/content', 'sidebar'); ?>
 
-        </div>
-
-
-
-    </div>
-</div>
+            </div><!-- row -->
+        </div><!-- container -->
+    </div><!-- section-content -->
 </section>
+<!-- POST -->
 
-
-<?php get_template_part('template-parts/acf', 'howtoContact'); ?>
-<?php get_footer(); ?>
+<?php
+get_template_part('template-parts/acf', 'howtoContact');
+get_footer(); ?>
