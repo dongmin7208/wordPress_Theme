@@ -1,17 +1,33 @@
-<div class="container-fluid bg-dark text-white py-2">
-    <small>
-        &copy;2022 Copyright - <?php bloginfo('name'); ?> | All rights reserved. | 000-0000-0000
-    </small>
-</div>
+	<!-- FOOTER
+	====================================================== -->
+	<section id="footer" class="text-white" style="background: #222;">
 
-<?php wp_footer(); ?>
+	    <div class="container p-5">
+	        <div class="row">
 
+	            <?php dynamic_sidebar('footer-1'); ?>
+	            <?php dynamic_sidebar('footer-2'); ?>
+	            <?php dynamic_sidebar('footer-3'); ?>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+	        </div>
+	    </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->
+	</section>
+	<!-- FOOTER -->
 
-</body>
+	<!-- SOCKET
+	====================================================== -->
+	<section id="socket" class="py-3" style="background: #333;">
+	    <div class="container">
+	        <div class="row">
+	            <?php dynamic_sidebar('socket'); ?>
+	        </div>
+	    </div>
+	</section>
+	<!-- SOCKET -->
 
-</html>
+	<?php wp_footer(); ?>
+
+	</body>
+
+	</html>
