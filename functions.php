@@ -1,10 +1,17 @@
 <?php
 
+// Bootstrap4 Navwalker
+require get_template_directory() . '/inc/bs4navwalker.php';
+
 // Theme Setups
 function coding_diy_setup()
 {
     add_theme_support('post-thumbnails');
+    add_image_size('front-slide', 1600, 1000, true);
     add_theme_support('post-formats', array('aside', 'link', 'status', 'video', 'image'));
+    register_nav_menus(array(
+        'primary'    => __('Primary Menu')
+    ));
 }
 
 add_action('after_setup_theme', 'coding_diy_setup');
@@ -25,6 +32,7 @@ function coding_diy_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'coding_diy_scripts');
+
 // Widget Init
 function codingDIY_widgets_init()
 {
