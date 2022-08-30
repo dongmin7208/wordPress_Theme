@@ -92,6 +92,44 @@ $thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
                             </div>
                         </div>
                     </div>
+                    <br><br>
+                    <!-- related posts -->
+                    <div class="related-posts">
+
+                        <h3 class="text-center mb-5">Related Posts</h3>
+
+                        <div class="row">
+
+                            <?php $relatedPost = new WP_Query(array(
+                                'author'    => get_the_author_meta('ID'),
+                                'category__in'    => wp_get_post_categories($post->ID),
+                                'posts_per_page'    => 3,
+                                'post__not_in'    => array(get_the_ID())
+                            ));
+
+                            if ($relatedPost->have_posts()) : while ($relatedPost->have_posts()) : $relatedPost->the_post();
+                            ?>
+
+                                    <div class="col-md-4">
+
+                                        <div class="card">
+
+                                            <?php if (has_post_thumbnail()) { ?>
+                                                <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('Large', ['class' => 'img-fluid']); ?></a>
+                                            <?php } else { ?>
+                                                <a href="<?php the_permalink(); ?>"><img class="img-fluid" src="http://via.placeholder.com/300x200" alt=""></a>
+                                            <?php } ?>
+                                            <p class="text-center p-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+
+                                        </div>
+
+                                    </div><!-- col-md-4 -->
+
+                            <?php endwhile;
+                            endif;
+                            wp_reset_postdata(); ?>
+                        </div>
+                    </div>
 
                 </article>
             <?php endwhile; ?>
