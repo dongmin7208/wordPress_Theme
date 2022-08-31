@@ -1,5 +1,4 @@
 <?php
-
 // Bootstrap4 Navwalker
 require get_template_directory() . '/inc/bs4navwalker.php';
 
@@ -32,7 +31,6 @@ function coding_diy_scripts()
 }
 
 add_action('wp_enqueue_scripts', 'coding_diy_scripts');
-
 // Widget Init
 function codingDIY_widgets_init()
 {
