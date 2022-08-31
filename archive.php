@@ -1,5 +1,5 @@
 <?php /* Archive Pages */
-get_header(); 
+get_header();
 get_template_part('template-parts/acf', 'pageBanner'); ?>
 
 <!-- ARCHIVE PAGE
@@ -9,8 +9,8 @@ get_template_part('template-parts/acf', 'pageBanner'); ?>
 		<div class="container">
 			<div class="row">
 
-				<?php 
-				get_template_part('template-parts/content', 'archive'); 
+				<?php
+				get_template_part('template-parts/content', 'archive');
 				get_template_part('template-parts/content', 'sidebar'); ?>
 
 			</div><!-- row -->
