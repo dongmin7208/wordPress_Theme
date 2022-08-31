@@ -16,3 +16,10 @@ function scrollFunction() {
 scrolltoTop.addEventListener('click', function () {
     window.scroll({ top: 0, behavior: 'smooth' });
 });
+
+
+// Modal Contact for wordpress menu-item
+var contactModal = document.querySelector('#menu-item-130 > a');
+
+contactModal.setAttribute('data-toggle', 'modal');
+contactModal.setAttribute('data-target', '#modal-contact');
