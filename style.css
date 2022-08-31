@@ -234,3 +234,7 @@ a {
 .dropdown-menu a {
     font-size: 0.9rem;
 }
+
+.form-check-input {
+    position: relative;
+}

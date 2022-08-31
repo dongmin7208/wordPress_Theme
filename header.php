@@ -1,123 +1,84 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
+    <head>
+        <meta charset="<?php bloginfo( 'charset' ); ?>" />
+        <title><?php wp_title(''); ?></title>
+        <link rel="profile" href="http://gmpg.org/xfn/11" />
+		
+		<!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/favicon-16x16.png">
+		<link rel="manifest" href="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/manifest.json">
+		<meta name="msapplication-TileColor" content="#ffffff">
+		<meta name="msapplication-TileImage" content="<?php bloginfo( 'stylesheet_directory' ); ?>/img/favicon/ms-icon-144x144.png">
+		<meta name="theme-color" content="#ffffff">
 
-<head>
-    <meta charset="<?php bloginfo('charset'); ?>" />
-    <title><?php wp_title(); ?></title>
-    <link rel="profile" href="http://gmpg.org/xfn/11" />
-
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <?php wp_head(); ?>
-</head>
+        <!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <?php wp_head(); ?>
+    </head>
 
 <body <?php body_class(); ?>>
 
-    <!-- Scroll to Top Button -->
-    <a id="scrolltoTop">Top</a>
+	<!-- Scroll to Top Button -->
+	<a id="scrolltoTop">Top</a>
 
-    <!-- Navbar 
+	<!-- Navbar 
 	====================================================== -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top mb-4">
-        <div class="container">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+		<div class="container">
+			
+			<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+				<img src="<?php bloginfo( 'stylesheet_directory' ); ?>/img/logo.png" alt="" class="rounded-circle img-fluid" width="40px" height="40px">
+				<span class="ml-2"><?php bloginfo( 'name' ); ?></span>
+			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-            <a class="navbar-brand" href="<?php echo esc_url(home_url('/')); ?>">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/img/LINE_logo.svg.png" alt="" class="rounded-circle img-fluid" width="40px" height="40px">
-                <span class="ml-2"><?php bloginfo('name'); ?></span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Intro</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Page
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Page Item1</a>
-                            <a class="dropdown-item" href="#">Page Item2</a>
-                            <a class="dropdown-item" href="#">Page Item3</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Reservation</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link" data-toggle="modal" data-target="#modal-contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+			<?php
+				wp_nav_menu(array(
+					'theme_location'  => 'primary',
+					'container'       => 'div',
+					'container_id'    => 'navbarNavDropdown',
+					'container_class' => 'collapse navbar-collapse',
+					'menu_id'         => false,
+					'menu_class'      => 'navbar-nav ml-auto',
+					'depth'           => 2,
+					'fallback_cb'     => 'bs4navwalker::fallback',
+					'walker'          => new bs4navwalker()
+				));
+			?>
 
-        </div><!-- container -->
+		</div><!-- container -->
+		
+	</nav><!-- navbar -->
 
-    </nav><!-- navbar -->
+	<?php get_template_part('template-parts/acf', 'modalContact'); ?>
 
-    <!-- MODAL CONTACT
-	====================================================== -->
-    <div class="modal fade" id="modal-contact" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel"><i class="fa fa-pencil-square-o"></i> Contact US!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <p class="lead text-center">We Like to receive a mail</p>
-                    <br>
-                    <form>
 
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="formInput1" placeholder="Your name">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="email" class="form-control" id="formInput2" placeholder="Your email">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="formInput3" placeholder="Subject">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <textarea name="" id="formInput4" rows="8" class="form-control" placeholder="Your messages"></textarea>
-                                </div>
-                            </div>
 
-                            <div class="col-md-2">
-                                <button class="btn btn-danger btn-lg btn-fill">Submit</button>
-                            </div>
-                        </div><!-- row -->
 
-                        <div class="text-center my-3">
-                            <p class="lead">OR</p>
-                            <p>Would you prefer to call? <br> <i class="fa fa-phone-square"> 02-111-11111</i></p>
-                        </div>
 
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- MODAL CONTACT -->
+
+
+
+
+
+
+
+
+
