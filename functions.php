@@ -1,4 +1,5 @@
 <?php
+
 // Bootstrap4 Navwalker
 require get_template_directory() . '/inc/bs4navwalker.php';
 
@@ -21,22 +22,35 @@ function coding_diy_scripts()
     // css
     wp_enqueue_style('bootstrap-styles', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
     wp_enqueue_style('fontawesome-styles', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+    wp_enqueue_style('lightbox-styles', '//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/css/lightbox.css');
     wp_enqueue_style('style-css', get_stylesheet_uri());
 
     // js
     wp_enqueue_script('jQuery-js', '//code.jquery.com/jquery-3.2.1.slim.min.js', array(), '3.2.1', true);
     wp_enqueue_script('popper-js', '//cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js', array(), '1.10.9', true);
     wp_enqueue_script('bootstrap-js', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js', array(), '4.0.0', true);
+    wp_enqueue_script('lightbox-js', '//cdnjs.cloudflare.com/ajax/libs/lightbox2/2.10.0/js/lightbox-plus-jquery.js', array(), '2.10.0', true);
     wp_enqueue_script('main-js', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
 }
 
 add_action('wp_enqueue_scripts', 'coding_diy_scripts');
+
 // Widget Init
 function codingDIY_widgets_init()
 {
     register_sidebar(array(
         'name' => __('Sidebar', 'codingDIY'),
         'id' => 'sidebar-1',
+        'description' => __('Widgets in this area will be shown on all posts.', 'codingDIY'),
+        'before_widget' => '<div id="%1$s" class="widget %2$s card card-raised card-body bg-light mb-4">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h5 class="widgettitle card-title">',
+        'after_title'   => '</h5>',
+    ));
+
+    register_sidebar(array(
+        'name' => __('Page-Sidebar', 'codingDIY'),
+        'id' => 'sidebar-2',
         'description' => __('Widgets in this area will be shown on all posts.', 'codingDIY'),
         'before_widget' => '<div id="%1$s" class="widget %2$s card card-raised card-body bg-light mb-4">',
         'after_widget'  => '</div>',
@@ -85,3 +99,19 @@ function codingDIY_widgets_init()
     ));
 }
 add_action('widgets_init', 'codingDIY_widgets_init');
+
+/**
+ * Customize the title for the home page, if one is not set.
+ *
+ * @param string $title The original title.
+ * @return string The title to use.
+ */
+function codingDIY_title_for_home($title)
+{
+    if (empty($title) && (is_home() || is_front_page())) {
+        $title = __('Home', 'textdomain') . ' | ' . get_bloginfo('description');
+    }
+    return $title;
+}
+
+add_filter('wp_title', 'codingDIY_title_for_home');

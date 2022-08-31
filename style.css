@@ -226,3 +226,7 @@ a {
         position: fixed;
     }
 }
+
+.kingkongboard-copyrights {
+    display: none;
+}
